@@ -4,7 +4,7 @@ import math
 import time
 
 
-class BloomFilter():
+class PyBloomFilter():
     #内置100个随机种子
     SEEDS = [543, 460, 171, 876, 796, 607, 650, 81, 837, 545, 591, 946, 846, 521, 913, 636, 878, 735, 414, 372,
              344, 324, 223, 180, 327, 891, 798, 933, 493, 293, 836, 10, 6, 544, 924, 849, 438, 41, 862, 648, 338,
@@ -57,7 +57,7 @@ pool = redis.ConnectionPool(host='127.0.0.1', port=6379, db=0)
 conn = redis.StrictRedis(connection_pool=pool)
 
 start = time.time()
-bf = BloomFilter(conn=conn)
+bf = PyBloomFilter(conn=conn)
 bf.add('www.jobbole.com')
 bf.add('www.zhihu.com')
 print(bf.is_exist('www.zhihu.com'))
