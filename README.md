@@ -1,6 +1,6 @@
 # BloomFilter_imooc
 
-python 实现的bloomfilter,
+python 基于redis实现的bloomfilter
 
 依赖mmh3
 
